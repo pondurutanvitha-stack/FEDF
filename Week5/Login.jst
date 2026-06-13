@@ -1,0 +1,81 @@
+import { useState } from "react";
+
+function Login() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [message, setMessage] = useState("");
+  const [emailError, setEmailError] = useState("");
+  const [passwordError, setPasswordError] = useState("");
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+
+    setEmailError("");
+    setPasswordError("");
+    setMessage("");
+
+    let valid = true;
+
+    // Email Validation
+    if (email.trim() === "") {
+      setEmailError("Email is required");
+      valid = false;
+    } else if (!email.includes("@")) {
+      setEmailError("Enter a valid email");
+      valid = false;
+    }
+
+    // Password Validation
+    if (password.trim() === "") {
+      setPasswordError("Password is required");
+      valid = false;
+    } else if (password.length < 6) {
+      setPasswordError("Password must be at least 6 characters");
+      valid = false;
+    }
+
+    if (valid) {
+      setMessage("Login Successful!");
+    }
+  };
+
+  return (
+    <div style={{ textAlign: "center", marginTop: "50px" }}>
+      <h2>Login Form</h2>
+
+      <form onSubmit={handleLogin}>
+        <div>
+          <input
+            type="email"
+            placeholder="Enter Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <br />
+          <span style={{ color: "red" }}>{emailError}</span>
+        </div>
+
+        <br />
+
+        <div>
+          <input
+            type="password"
+            placeholder="Enter Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <br />
+          <span style={{ color: "red" }}>{passwordError}</span>
+        </div>
+
+        <br />
+
+        <button type="submit">Login</button>
+      </form>
+
+      <h3 style={{ color: "green" }}>{message}</h3>
+    </div>
+  );
+}
+
+export default Login;
