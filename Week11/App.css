@@ -1,0 +1,73 @@
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: linear-gradient(135deg, #141e30, #243b55);
+  min-height: 100vh;
+  color: white;
+}
+
+.app {
+  text-align: center;
+  padding: 20px;
+}
+
+.title {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.card {
+  width: 320px;
+  margin: auto;
+  padding: 20px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px);
+}
+
+input, select {
+  width: 90%;
+  padding: 10px;
+  margin: 6px 0;
+  border: none;
+  border-radius: 6px;
+}
+
+button {
+  width: 95%;
+  padding: 10px;
+  background: #00c6ff;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #0072ff;
+}
+
+.history {
+  margin-top: 20px;
+}
+
+.ticket {
+  background: rgba(255,255,255,0.1);
+  margin: 10px auto;
+  padding: 10px;
+  width: 300px;
+  border-radius: 10px;
+}
+
+.price {
+  color: #00ffae;
+  font-weight: bold;
+}
+
+.error {
+  color: red;
+}
+
+.empty {
+  color: #ccc;
+}
